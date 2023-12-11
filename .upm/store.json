@@ -1,0 +1,1 @@
+{"version":2,"languages":{"nodejs-npm":{"specfileHash":"00c793e8a4766992e1dc1d16f5cf53f7","lockfileHash":"f5848ef6d62bdb721776769157a70363","guessedImports":["semver","moment-timezone","chalk-animation","dotenv","chalk","axios"],"guessedImportsHash":"cab1943caba924c525bb682b7fa3ef19"}}}

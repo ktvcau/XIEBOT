@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROFILE XIE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #avatar-container {
+            border: 2px solid #${Math.floor(Math.random()*16777215).toString(16)};
+            border-radius: 15px;
+            padding: 10px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        #avatar {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        #info {
+            text-align: center;
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            display: inline-block;
+            visibility: hidden; 
+        }
+
+        #notification {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 350px;
+            height: 70px;
+            background-color: #fff;
+            border-radius: 15px;
+            border: 2px solid #${Math.floor(Math.random()*16777215).toString(16)};
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        h3 {
+            color: #333;
+            font-size: 32px;
+            font-family: 'Roboto', sans-serif;
+            animation: textAnimation 2s infinite;
+        }
+
+        @keyframes textAnimation {
+            0% {
+                color: #333;
+            }
+            50% {
+                color: #ff0000;
+                transform: scale(1.2);
+            }
+            100% {
+                color: #333;
+            }
+        }
+
+        p {
+            color: #666;
+            font-size: 18px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #social-buttons {
+          position: fixed;
+          left: 10px;
+          top: 10px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .social-button {
+    width: 70px; 
+    height: 30px; 
+    border-radius: 5px; 
+    margin-bottom: 10px;
+    cursor: pointer;
+    background: linear-gradient(to right, #fadede, #d9d9ff, #fff7c3, #ffe6b3);
+    border: 2px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #000; 
+    font-size: 12px; 
+         }
+    </style>
+</head>
+
+<body>
+
+    <div id="avatar-container">
+        <img id="avatar" src="https://i.imgur.com/y4WEj37.jpg" alt="Avatar">
+    </div>
+
+    <div id="info">
+        <h3>Cao Tiến Thành</h3>
+        <p>Sinh nhật tôi: <span id="birthday-countdown"></span></p>
+        <p>Hiện tại: <span id="current-time"></span></p>
+        <p>Tết Nguyên Đán 2024: <span id="tet-countdown"></span></p>
+    </div>
+
+    <div id="notification">
+        <p>WELCOME TO XIE'S PROFILE WEBSITE<br>Chúc bạn có một ngày mới vui vẻ!</p>
+    </div>
+
+    <script>
+ function updateDateTime() {
+            const currentTimeElement = document.getElementById('current-time');
+            const birthdayCountdownElement = document.getElementById('birthday-countdown');
+            const tetCountdownElement = document.getElementById('tet-countdown');
+
+            const currentTime = new Date();
+            currentTimeElement.innerText = currentTime.toLocaleString();
+
+            const birthday = new Date('2024-10-19T00:00:00Z');
+            const birthdayTimeDifference = birthday - currentTime;
+            const birthdayDays = Math.floor(birthdayTimeDifference / (1000 * 60 * 60 * 24));
+            const birthdayHours = Math.floor((birthdayTimeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const birthdayMinutes = Math.floor((birthdayTimeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const birthdaySeconds = Math.floor((birthdayTimeDifference % (1000 * 60)) / 1000);
+            birthdayCountdownElement.innerText = `\n${birthdayDays} ngày, ${birthdayHours} giờ, ${birthdayMinutes} phút, ${birthdaySeconds} giây`;
+
+            const tet2024 = new Date('2024-02-10T00:00:00Z');
+            const tetTimeDifference = tet2024 - currentTime;
+            const tetDays = Math.floor(tetTimeDifference / (1000 * 60 * 60 * 24));
+            const tetHours = Math.floor((tetTimeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const tetMinutes = Math.floor((tetTimeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const tetSeconds = Math.floor((tetTimeDifference % (1000 * 60)) / 1000);
+            tetCountdownElement.innerText = `\n${tetDays} ngày, ${tetHours} giờ, ${tetMinutes} phút, ${tetSeconds} giây`;
+        }
+
+        setInterval(updateDateTime, 1000);
+
+        updateDateTime();
+
+        function openAndCopy(link) {
+
+            window.open(link, '_blank');
+
+            var dummy = document.createElement("textarea");
+            document.body.appendChild(dummy);
+            dummy.value = link;
+            dummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(dummy);
+        }
+
+        let notificationShown = false;
+
+        function updateAvatar() {
+            const avatarElement = document.getElementById('avatar');
+                      const avatarUrls = [
+              'https://i.imgur.com/K3TcQ8j.jpg',
+              'https://i.imgur.com/MSnNCws.jpg',
+              'https://i.imgur.com/HpZSfiT.jpg',
+              'https://i.imgur.com/Vqm70AM.jpg',
+              'https://i.imgur.com/KrPnB6q.jpg',
+              'https://i.imgur.com/SmjrleX.jpg',
+              'https://i.imgur.com/fWvAl7D.jpg',
+              'https://i.imgur.com/QTgbmdZ.jpg',
+              'https://i.imgur.com/71mHWMH.jpg',
+              'https://i.imgur.com/ofiPFjP.jpg',
+              'https://i.imgur.com/8MKxMpL.jpg',
+              'https://i.imgur.com/Jc1C3jk.jpg',
+              'https://i.imgur.com/h4Cru8D.jpg',
+              'https://i.imgur.com/MVcHWUM.jpg',
+              'https://i.imgur.com/ZvSZXZh.jpg',
+              'https://i.imgur.com/W2MAnfZ.jpg',
+              'https://i.imgur.com/FiuThec.jpg',
+              'https://i.imgur.com/AEOG3D2.jpg',
+              'https://i.imgur.com/A0zHtbg.jpg',
+              'https://i.imgur.com/Eo6zuFA.jpg',
+              'https://i.imgur.com/yx1UkIb.jpg',
+              'https://i.imgur.com/nLBzloG.jpg',
+              'https://i.imgur.com/67oxFpe.jpg',
+              'https://i.imgur.com/jLZcYHq.jpg',
+              'https://i.imgur.com/hluNpn9.jpg',
+              'https://i.imgur.com/WdEoDUt.jpg',
+              'https://i.imgur.com/tph6wCh.jpg',
+              'https://i.imgur.com/av84Sk0.jpg',
+              'https://i.imgur.com/VjRb5Od.jpg',
+              'https://i.imgur.com/s2Q6lbu.jpg',
+              'https://i.imgur.com/CYPt0Wj.jpg',
+              'https://i.imgur.com/eRQvr0i.jpg',
+              'https://i.imgur.com/gdn4TgF.jpg',
+              'https://i.imgur.com/Hu4hBZK.jpg',
+              'https://i.imgur.com/0CDaRx4.jpg',
+              'https://i.imgur.com/hGK49Wm.jpg',
+              'https://i.imgur.com/KwR8tzJ.jpg',
+              'https://i.imgur.com/ib5QvOd.jpg',
+              'https://i.imgur.com/xUVW1g5.jpg',
+              'https://i.imgur.com/NoYzv2b.jpg',
+              'https://i.imgur.com/H7lzYfu.jpg',
+              'https://i.imgur.com/z7Bt46N.jpg',
+              'https://i.imgur.com/YdCC5sN.jpg',
+              'https://i.imgur.com/dIB2J9T.jpg',
+              'https://i.imgur.com/JOz9RzZ.jpg',
+              'https://i.imgur.com/qmTO6xW.jpg',
+              'https://i.imgur.com/gfUd5Iu.jpg',
+              'https://i.imgur.com/QonfURd.jpg',
+              'https://i.imgur.com/ct3gXUF.jpg',
+              'https://i.imgur.com/Nu6FmqT.jpg'
+          ];
+
+            const randomIndex = Math.floor(Math.random() * avatarUrls.length);
+            avatarElement.src = avatarUrls[randomIndex];
+        }
+
+        function playMusic() {
+    const musicLinks = [
+        'https://files.catbox.moe/olnjgw.mp3',
+        'https://files.catbox.moe/e6p171.mp3',
+        'https://files.catbox.moe/vtz7oy.mp3',
+        'https://files.catbox.moe/a7oo8d.mp3',
+        'https://files.catbox.moe/j2abgq.mp3',
+        'https://files.catbox.moe/p1rvns.mp3',
+        'https://files.catbox.moe/ufv6nb.mp3',
+        'https://files.catbox.moe/g9v3fo.mp3'
+    ];
+
+    let currentIndex = 0;
+
+    function playNextMusic() {
+        const audio = new Audio(musicLinks[currentIndex]);
+        audio.play();
+
+        audio.addEventListener('ended', () => {
+            currentIndex = (currentIndex + 1) % musicLinks.length;
+            playNextMusic();
+        });
+    }
+
+    playNextMusic();
+}
+
+        function showNotification() {
+            if (!notificationShown) {
+                const notificationElement = document.getElementById('notification');
+                notificationElement.style.display = 'flex';
+
+                notificationShown = true;
+
+                setTimeout(() => {
+                    notificationElement.style.display = 'none';
+                    document.getElementById('info').style.visibility = 'visible'; 
+                    playMusic();
+                }, 5000);
+            }
+        }
+
+        window.addEventListener('load', () => {
+            showNotification();
+            setInterval(() => {
+                updateDateTime();
+                updateAvatar();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
