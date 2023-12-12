@@ -8,3 +8,7 @@ Run Bot
 ```
 npm start
 ```
+### Cài đặt
+```
+npm install
+```
