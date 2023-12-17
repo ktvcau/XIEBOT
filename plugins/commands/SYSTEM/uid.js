@@ -1,4 +1,5 @@
 const config = {
+    permissions: [2],
     credits: "XaviaTeam"
 }
 
