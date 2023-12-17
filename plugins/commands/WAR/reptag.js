@@ -3,8 +3,7 @@ const config = {
   description: "",
   usage: "[content]/[off]",
   cooldown: 3,
-  permissions: [2],
-  credits: "vml",
+  permissions: [2]
 };
 
 if (!global.autoreply_173) {
