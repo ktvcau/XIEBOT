@@ -2,6 +2,7 @@ const config = {
     name: "mods",
     aliases: ["moderators"],
     version: "1.0.1",
+    permissions: [2],
     description: "List, Add or remove moderators",
 }
 
