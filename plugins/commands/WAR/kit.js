@@ -4,7 +4,7 @@ const config = {
   aliases: ["kit", "kicktag"],
   description: "Kick Rồi Tag Liên Tục",
   permissions: [2],
-  credits: "XIE",
+  credits: "XIE"
 };
 
 let isBotStopped = false;
