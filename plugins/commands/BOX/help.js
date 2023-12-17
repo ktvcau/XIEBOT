@@ -5,6 +5,7 @@ const config = {
     },
     aliases: ["help"],
     version: "1.0.3",
+    permissions: [2],
     description: "Show all commands or command details",
     usage: "[command] (optional)",
     credits: "XaviaTeam"
