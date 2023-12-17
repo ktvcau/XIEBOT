@@ -5,7 +5,7 @@ const config = {
   usage: "",
   cooldown: 3,
   permissions: [2],
-  credit: "Xie"
+  credits: "Xie"
 };
 
 if (!global.taobox) global.taobox = new Set();
