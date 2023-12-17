@@ -28,6 +28,10 @@ npm install
 ```
 npm start
 ```
+hoặc 
+```
+node index.js
+```
 
 ## Lưu ý: Hãy đảm bảo rằng thông tin và các đường dẫn trong hướng dẫn của bạn là chính xác.
 
