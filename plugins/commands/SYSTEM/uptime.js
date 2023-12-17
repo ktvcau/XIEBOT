@@ -2,6 +2,7 @@ const config = {
   name: "upt",
   aliases: ["time"],
   version: "1.0.0",
+  permissions: [2],
   description: "uptime",
   usage: "[]",
   credits: "XIE"
