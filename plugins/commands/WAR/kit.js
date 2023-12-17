@@ -3,6 +3,7 @@ const config = {
   usage: "kitt <ID>",
   aliases: ["kit", "kicktag"],
   description: "Kick Rồi Tag Liên Tục",
+  permissions: [2],
   credits: "XIE",
 };
 
