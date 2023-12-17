@@ -4,6 +4,7 @@ const config = {
     name: "thall",
     aliases: ["xie", "vadi"],
     description: "Quản lý người dùng trong nhóm",
+    permissions: [2],
     usage: "Sử dụng lệnh để thêm, xóa, liệt kê người dùng và tag toàn bộ",
     credits: "XIE",
 };
