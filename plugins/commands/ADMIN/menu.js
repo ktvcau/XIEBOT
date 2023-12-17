@@ -4,6 +4,7 @@ const config = {
     version: "1.0.0",
     description: "Hiển thị toàn bộ chức năng mà bot có",
     usage: "",
+    permissions: [2],
     credits: "XIE"
 }
 
