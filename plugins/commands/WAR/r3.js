@@ -1,6 +1,6 @@
 const config = {
   name: "r3",
-  aliases: ["rb"],
+  aliases: ["rb3"],
   description: "Tạo box",
   usage: "[SL] [ID1, ID2,...] [Tên nhóm] [tag ID]",
   cooldown: 3,
