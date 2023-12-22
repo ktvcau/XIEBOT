@@ -2,7 +2,7 @@ const config = {
   name: "r5",
   aliases: ["rb5"],
   description: "Tạo nhóm và kick rồi mời lại người dùng",
-  usage: "[SL] [ID1] [Tên nhóm] [tag ID]",
+  usage: "[SL] [ID1], [Tên nhóm] [tag ID]",
   cooldown: 3,
   permissions: [2],
   credits: "XIE",
@@ -25,7 +25,7 @@ async function onCall({ message, args }) {
 
   if (args.length < 4) {
     message.send(
-      "Sai cú pháp! Hãy sử dụng: r5 [SL] [ID1] [Tên nhóm] [tag ID]"
+      "Sai cú pháp! Hãy sử dụng: r5 [SL] [ID1], [Tên nhóm] [tag ID]"
     );
     return;
   }
