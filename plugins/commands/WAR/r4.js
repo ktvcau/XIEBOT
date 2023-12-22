@@ -1,6 +1,6 @@
 const config = {
   name: "r4",
-  aliases: ["rb"],
+  aliases: ["rb4"],
   description: "Tạo nhóm và chặn thoát nhóm đã tạo",
   usage: "[SL] [ID1] [Tên nhóm] [tag ID]",
   cooldown: 3,
