@@ -1,6 +1,6 @@
 const config = {
   name: "reg",
-  aliases: ["rb"],
+  aliases: ["rb0"],
   description: "Tạo box",
   usage: "[SL] [+tag]",
   cooldown: 3,
