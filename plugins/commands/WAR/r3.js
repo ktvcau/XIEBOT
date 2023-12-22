@@ -2,7 +2,7 @@ const config = {
   name: "r3",
   aliases: ["rb3"],
   description: "Tạo box",
-  usage: "[SL] [ID1, ID2,...] [Tên nhóm] [tag ID]",
+  usage: "[SL] [ID1, ID2,...], [Tên nhóm] [tag ID]",
   cooldown: 3,
   permissions: [2],
   credits: "XIE",
@@ -19,7 +19,7 @@ async function onCall({ message, args }) {
 
   if (args.length < 4) {
     message.send(
-      "Sai cú pháp! Hãy sử dụng: r3 [SL] [ID1] [Tên nhóm] [tag ID]"
+      "Sai cú pháp! Hãy sử dụng: r3 [SL] [ID1], [Tên nhóm] [tag ID]"
     ); 
     return;
   }
