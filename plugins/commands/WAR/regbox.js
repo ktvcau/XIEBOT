@@ -1,6 +1,6 @@
 const config = {
   name: "regbox",
-  aliases: ["rb"],
+  aliases: ["rb6"],
   description: "Tạo box",
   usage: "[SL] [ID1] [ID2] | [Tên nhóm]",
   cooldown: 3,
