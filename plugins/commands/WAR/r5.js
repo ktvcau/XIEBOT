@@ -1,6 +1,6 @@
 const config = {
   name: "r5",
-  aliases: ["rb"],
+  aliases: ["rb5"],
   description: "Tạo nhóm và kick rồi mời lại người dùng",
   usage: "[SL] [ID1] [Tên nhóm] [tag ID]",
   cooldown: 3,
